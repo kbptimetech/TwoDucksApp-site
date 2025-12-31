@@ -4,175 +4,220 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Two Ducks</title>
-  <meta name="description" content="When you are both ready. A private, gentle way for couples to signal openness to connection." />
 
+  <meta name="description" content="When you are both ready. A private, gentle way for couples to signal openness to connection." />
+  <meta name="theme-color" content="#F59BB4" />
+
+  <!-- Optional favicon -->
   <link rel="icon" href="assets/favicon.png" />
 
   <style>
     :root{
-      /* Update these two if you want to match PinkStart/PinkEnd exactly */
-      --pinkStart:#ff9fb5;
-      --pinkEnd:#ff7aa2;
+      /* === From BrandTheme.swift / Contents.json === */
+      --pinkStart:#F59BB4; /* darker */
+      --pinkEnd:#F9C4D0;   /* lighter */
 
-      --cream: rgba(255, 249, 242, 0.92); /* like Brand.cardFill opacity */
-      --text:#1b1b1b;                     /* like TextPrimary */
-      --muted: rgba(27,27,27,0.72);
+      --cream: rgba(255,245,242,0.92); /* #FFF5F2 */
+      --text:#3E3A3A;
+      --muted: rgba(62,58,58,0.72);
+
       --whiteLine: rgba(255,255,255,0.55);
 
       --radiusCard:16px;
       --radiusBtn:18px;
+
       --shadowCard: 0 8px 18px rgba(0,0,0,0.08);
       --shadowBtn: 0 12px 22px rgba(0,0,0,0.14);
 
       --max: 880px;
     }
 
-    *{ box-sizing:border-box; }
+    * { box-sizing:border-box; }
+
     body{
       margin:0;
-      color:var(--text);
-      font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: linear-gradient(135deg, var(--pinkStart), var(--pinkEnd));
       min-height:100vh;
+      font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: linear-gradient(135deg, var(--pinkStart), var(--pinkEnd));
     }
 
     .wrap{
       max-width:var(--max);
       margin:0 auto;
-      padding: 46px 18px 40px;
+      padding:48px 18px 40px;
     }
 
+    /* ===== Header ===== */
     .top{
       display:flex;
       align-items:center;
       gap:14px;
-      margin-bottom: 18px;
+      margin-bottom:20px;
     }
 
     .logo{
-      width:64px; height:64px;
-      border-radius: 18px;
-      box-shadow: var(--shadowCard);
-      background: rgba(255,255,255,0.25);
-      display:flex; align-items:center; justify-content:center;
+      width:64px;
+      height:64px;
+      border-radius:18px;
       overflow:hidden;
+      background: rgba(255,255,255,0.25);
+      box-shadow: var(--shadowCard);
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
-    .logo img{ width:100%; height:100%; object-fit:cover; }
+
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
 
     .brand{
+      font-size:24px;
+      font-weight:800;
+      letter-spacing:-0.02em;
       color: rgba(255,255,255,0.95);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      font-size: 24px;
-      line-height: 1.1;
-    }
-    .tagline{
-      color: rgba(255,255,255,0.82);
-      margin-top: 2px;
-      font-size: 14px;
+      line-height:1.1;
     }
 
+    .tagline{
+      font-size:14px;
+      color: rgba(255,255,255,0.82);
+      margin-top:2px;
+    }
+
+    /* ===== Card ===== */
     .card{
-      background: var(--cream);
-      border-radius: var(--radiusCard);
-      border: 1px solid var(--whiteLine);
-      box-shadow: var(--shadowCard);
-      padding: 22px 20px;
-      margin-top: 14px;
+      background:var(--cream);
+      border-radius:var(--radiusCard);
+      border:1px solid var(--whiteLine);
+      box-shadow:var(--shadowCard);
+      padding:22px 20px;
+      margin-top:14px;
       backdrop-filter: blur(6px);
     }
 
     h1{
-      margin: 0 0 10px;
-      font-size: 40px;
-      letter-spacing: -0.03em;
-    }
-    .sub{
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.55;
+      margin:0 0 10px;
+      font-size:40px;
+      letter-spacing:-0.03em;
     }
 
+    .sub{
+      margin:0 0 18px;
+      font-size:17px;
+      line-height:1.55;
+      color:var(--muted);
+    }
+
+    /* ===== Buttons ===== */
     .btnRow{
       display:flex;
       gap:12px;
       flex-wrap:wrap;
-      margin-top: 10px;
+      margin-top:10px;
     }
 
     .btn{
       display:inline-block;
+      padding:14px 16px;
+      border-radius:var(--radiusBtn);
+      font-weight:700;
       text-decoration:none;
-      padding: 14px 16px;
-      border-radius: var(--radiusBtn);
-      font-weight: 700;
-      border: 1px solid rgba(255,255,255,0.35);
-      box-shadow: var(--shadowBtn);
       transition: transform 0.08s ease, opacity 0.08s ease;
     }
-    .btn:active{ transform: scale(0.985); opacity:0.92; }
+
+    .btn:active{
+      transform:scale(0.985);
+      opacity:0.92;
+    }
 
     .btnPrimary{
-      color:white;
+      color:#fff;
       background: linear-gradient(135deg, var(--pinkStart), var(--pinkEnd));
-    }
-    .btnGhost{
-      color: var(--text);
-      background: rgba(255,255,255,0.55);
-      box-shadow: var(--shadowCard);
-      border: 1px solid rgba(255,255,255,0.55);
+      box-shadow:var(--shadowBtn);
     }
 
+    .btnGhost{
+      color:var(--text);
+      background: rgba(255,255,255,0.55);
+      border:1px solid rgba(255,255,255,0.55);
+      box-shadow:var(--shadowCard);
+    }
+
+    /* ===== Sections ===== */
     .sectionTitle{
-      margin: 0 0 10px;
-      font-size: 20px;
-      letter-spacing: -0.01em;
+      font-size:20px;
+      font-weight:700;
+      margin:0 0 10px;
+      letter-spacing:-0.01em;
     }
 
     details{
       background: rgba(255,255,255,0.55);
-      border: 1px solid rgba(255,255,255,0.55);
-      border-radius: 14px;
-      padding: 12px 12px;
-      margin: 10px 0;
+      border:1px solid rgba(255,255,255,0.55);
+      border-radius:14px;
+      padding:12px;
+      margin:10px 0;
     }
-    summary{ cursor:pointer; font-weight: 700; }
-    details p{ margin: 10px 0 0; color: var(--muted); line-height:1.55; }
 
+    summary{
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    details p{
+      margin:10px 0 0;
+      color:var(--muted);
+      line-height:1.55;
+    }
+
+    /* ===== Contact ===== */
+    .contactLine{
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .contactLine a{
+      color:var(--text);
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .contactLine a:hover{
+      text-decoration:underline;
+    }
+
+    /* ===== Footer ===== */
     .footer{
       display:flex;
       justify-content:space-between;
       gap:12px;
       flex-wrap:wrap;
-      margin-top: 18px;
+      margin-top:18px;
+      padding:10px 2px;
+      font-size:13px;
       color: rgba(255,255,255,0.85);
-      font-size: 13px;
-      padding: 10px 2px;
     }
+
     .footer a{
       color: rgba(255,255,255,0.92);
+      font-weight:650;
       text-decoration:none;
-      font-weight: 650;
     }
-    .footer a:hover{ text-decoration:underline; }
 
-    .contactLine{
-      color: var(--muted);
-      line-height:1.65;
+    .footer a:hover{
+      text-decoration:underline;
     }
-    .contactLine a{
-      color: var(--text);
-      font-weight: 700;
-      text-decoration:none;
-    }
-    .contactLine a:hover{ text-decoration:underline; }
   </style>
 </head>
 
 <body>
   <div class="wrap">
 
+    <!-- Header -->
     <div class="top">
       <div class="logo">
         <img src="assets/logo.png" alt="Two Ducks logo" />
@@ -183,7 +228,8 @@
       </div>
     </div>
 
-    <div class="card" id="top">
+    <!-- Hero -->
+    <div class="card">
       <h1>When you are both ready.</h1>
       <p class="sub">
         Two Ducks is a private, gentle way for couples to signal openness to connection —
@@ -191,43 +237,47 @@
       </p>
 
       <div class="btnRow">
-        <!-- Replace # with your App Store link once live -->
-        <a class="btn btnPrimary" href="#" target="_blank" rel="noopener">Download on the App Store</a>
+        <!-- Replace # with App Store link once live -->
+        <a class="btn btnPrimary" href="#" target="_blank" rel="noopener">
+          Download on the App Store
+        </a>
         <a class="btn btnGhost" href="#faq">FAQ</a>
         <a class="btn btnGhost" href="#contact">Contact</a>
       </div>
     </div>
 
+    <!-- FAQ -->
     <div class="card" id="faq">
       <div class="sectionTitle">FAQ</div>
 
       <details>
         <summary>How does it work?</summary>
-        <p>You choose <strong>Open</strong> or <strong>Quiet Night</strong>. You’re notified only if you both choose Open.</p>
+        <p>You choose <strong>Open</strong> or <strong>Quiet Night</strong>. You’re notified only if both partners choose Open.</p>
       </details>
 
       <details>
         <summary>Do we see each other’s responses?</summary>
-        <p>No — you only see a “match” if both of you are Open.</p>
+        <p>No. You only see a connection if both of you choose Open.</p>
       </details>
 
       <details>
-        <summary>Is my data private?</summary>
-        <p>We aim to keep things simple and privacy-first. See the Privacy Policy for details.</p>
+        <summary>Is this private?</summary>
+        <p>Yes. The app is designed to minimize pressure and avoid unnecessary data exposure.</p>
       </details>
     </div>
 
+    <!-- Contact -->
     <div class="card" id="contact">
       <div class="sectionTitle">Contact</div>
       <div class="contactLine">
-        Email us at <a href="mailto:hello@twoducksapp.com">hello@twoducksapp.com</a>
-        <br/>
-        (If you prefer, include screenshots + your device model.)
+        Email us at
+        <a href="mailto:hello@twoducksapp.com">hello@twoducksapp.com</a>
       </div>
     </div>
 
+    <!-- Footer -->
     <div class="footer">
-      <div>© <span id="y"></span> Two Ducks</div>
+      <div>© <span id="year"></span> Two Ducks</div>
       <div>
         <a href="terms.html">Terms</a>
         &nbsp;·&nbsp;
@@ -238,8 +288,7 @@
   </div>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
