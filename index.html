@@ -1,1 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Two Ducks</title>
+  <meta name="description" content="When you are both ready. A private, gentle way for couples to signal openness to connection." />
+
+  <link rel="icon" href="assets/favicon.png" />
+
+  <style>
+    :root{
+      /* Update these two if you want to match PinkStart/PinkEnd exactly */
+      --pinkStart:#ff9fb5;
+      --pinkEnd:#ff7aa2;
+
+      --cream: rgba(255, 249, 242, 0.92); /* like Brand.cardFill opacity */
+      --text:#1b1b1b;                     /* like TextPrimary */
+      --muted: rgba(27,27,27,0.72);
+      --whiteLine: rgba(255,255,255,0.55);
+
+      --radiusCard:16px;
+      --radiusBtn:18px;
+      --shadowCard: 0 8px 18px rgba(0,0,0,0.08);
+      --shadowBtn: 0 12px 22px rgba(0,0,0,0.14);
+
+      --max: 880px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      color:var(--text);
+      font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, var(--pinkStart), var(--pinkEnd));
+      min-height:100vh;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding: 46px 18px 40px;
+    }
+
+    .top{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom: 18px;
+    }
+
+    .logo{
+      width:64px; height:64px;
+      border-radius: 18px;
+      box-shadow: var(--shadowCard);
+      background: rgba(255,255,255,0.25);
+      display:flex; align-items:center; justify-content:center;
+      overflow:hidden;
+    }
+    .logo img{ width:100%; height:100%; object-fit:cover; }
+
+    .brand{
+      color: rgba(255,255,255,0.95);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 24px;
+      line-height: 1.1;
+    }
+    .tagline{
+      color: rgba(255,255,255,0.82);
+      margin-top: 2px;
+      font-size: 14px;
+    }
+
+    .card{
+      background: var(--cream);
+      border-radius: var(--radiusCard);
+      border: 1px solid var(--whiteLine);
+      box-shadow: var(--shadowCard);
+      padding: 22px 20px;
+      margin-top: 14px;
+      backdrop-filter: blur(6px);
+    }
+
+    h1{
+      margin: 0 0 10px;
+      font-size: 40px;
+      letter-spacing: -0.03em;
+    }
+    .sub{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.55;
+    }
+
+    .btnRow{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      padding: 14px 16px;
+      border-radius: var(--radiusBtn);
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: var(--shadowBtn);
+      transition: transform 0.08s ease, opacity 0.08s ease;
+    }
+    .btn:active{ transform: scale(0.985); opacity:0.92; }
+
+    .btnPrimary{
+      color:white;
+      background: linear-gradient(135deg, var(--pinkStart), var(--pinkEnd));
+    }
+    .btnGhost{
+      color: var(--text);
+      background: rgba(255,255,255,0.55);
+      box-shadow: var(--shadowCard);
+      border: 1px solid rgba(255,255,255,0.55);
+    }
+
+    .sectionTitle{
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    details{
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(255,255,255,0.55);
+      border-radius: 14px;
+      padding: 12px 12px;
+      margin: 10px 0;
+    }
+    summary{ cursor:pointer; font-weight: 700; }
+    details p{ margin: 10px 0 0; color: var(--muted); line-height:1.55; }
+
+    .footer{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top: 18px;
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      padding: 10px 2px;
+    }
+    .footer a{
+      color: rgba(255,255,255,0.92);
+      text-decoration:none;
+      font-weight: 650;
+    }
+    .footer a:hover{ text-decoration:underline; }
+
+    .contactLine{
+      color: var(--muted);
+      line-height:1.65;
+    }
+    .contactLine a{
+      color: var(--text);
+      font-weight: 700;
+      text-decoration:none;
+    }
+    .contactLine a:hover{ text-decoration:underline; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="top">
+      <div class="logo">
+        <img src="assets/logo.png" alt="Two Ducks logo" />
+      </div>
+      <div>
+        <div class="brand">Two Ducks</div>
+        <div class="tagline">When you are both ready.</div>
+      </div>
+    </div>
+
+    <div class="card" id="top">
+      <h1>When you are both ready.</h1>
+      <p class="sub">
+        Two Ducks is a private, gentle way for couples to signal openness to connection —
+        without pressure or awkward conversations.
+      </p>
+
+      <div class="btnRow">
+        <!-- Replace # with your App Store link once live -->
+        <a class="btn btnPrimary" href="#" target="_blank" rel="noopener">Download on the App Store</a>
+        <a class="btn btnGhost" href="#faq">FAQ</a>
+        <a class="btn btnGhost" href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="card" id="faq">
+      <div class="sectionTitle">FAQ</div>
+
+      <details>
+        <summary>How does it work?</summary>
+        <p>You choose <strong>Open</strong> or <strong>Quiet Night</strong>. You’re notified only if you both choose Open.</p>
+      </details>
+
+      <details>
+        <summary>Do we see each other’s responses?</summary>
+        <p>No — you only see a “match” if both of you are Open.</p>
+      </details>
+
+      <details>
+        <summary>Is my data private?</summary>
+        <p>We aim to keep things simple and privacy-first. See the Privacy Policy for details.</p>
+      </details>
+    </div>
+
+    <div class="card" id="contact">
+      <div class="sectionTitle">Contact</div>
+      <div class="contactLine">
+        Email us at <a href="mailto:hello@twoducksapp.com">hello@twoducksapp.com</a>
+        <br/>
+        (If you prefer, include screenshots + your device model.)
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Two Ducks</div>
+      <div>
+        <a href="terms.html">Terms</a>
+        &nbsp;·&nbsp;
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
