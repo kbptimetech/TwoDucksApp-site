@@ -7,20 +7,19 @@
 
   <meta name="theme-color" content="#F59BB4" />
   <link rel="icon" href="assets/favicon.png" />
+  <meta name="robots" content="noindex" />
 
   <style>
     :root{
-      /* Brand colors from your Contents.json */
       --pinkStart:#F59BB4;
       --pinkEnd:#F9C4D0;
 
-      --cream: rgba(255,245,242,0.92); /* #FFF5F2 */
+      --cream: rgba(255,245,242,0.92);
       --text:#3E3A3A;
       --muted: rgba(62,58,58,0.72);
 
       --whiteLine: rgba(255,255,255,0.55);
       --radiusCard:16px;
-
       --shadowCard: 0 8px 18px rgba(0,0,0,0.08);
       --max: 880px;
     }
@@ -133,6 +132,14 @@
     }
     a:hover{ text-decoration:underline; }
 
+    .notice{
+      margin-top:12px;
+      padding:14px 14px;
+      border-radius:14px;
+      border:1px solid rgba(62,58,58,0.10);
+      background: rgba(255,255,255,0.45);
+    }
+
     .footer{
       display:flex;
       justify-content:space-between;
@@ -169,48 +176,96 @@
 
     <div class="card">
       <h1>Privacy Policy</h1>
-      <p class="updated"><em>Last updated: [DATE]</em></p>
+      <p class="updated"><em>Effective date: December 31, 2025 · Last updated: December 31, 2025</em></p>
 
       <p>
-        Two Ducks is built to be private, simple, and low-pressure. This Privacy Policy explains what we
-        collect, how we use it, and the choices you have.
+        Your privacy matters to us. This Privacy Policy explains how Two Ducks collects, uses,
+        and protects information when you use the Two Ducks app and related services
+        (collectively, the “Service”).
       </p>
 
-      <h2>Information we collect</h2>
-      <ul>
-        <li><strong>Account information</strong> (e.g., email) to help you sign in and pair with your partner.</li>
-        <li><strong>App activity</strong> needed to provide the core experience (e.g., whether you selected Open or Quiet Night).</li>
-        <li><strong>Diagnostics</strong> to keep the app reliable (e.g., crash logs, performance issues).</li>
-      </ul>
-
-      <h2>How we use information</h2>
-      <ul>
-        <li>To operate the app and deliver the matching experience.</li>
-        <li>To provide support when you contact us.</li>
-        <li>To improve stability and fix bugs.</li>
-      </ul>
-
-      <h2>Sharing</h2>
+      <h2>1) Who we are</h2>
       <p>
-        We don’t sell your personal information. Your partner is only notified when there is a mutual match.
-        For more details on what your partner sees, please refer to the FAQ on the main page.
+        Two Ducks is operated by <strong>Prathap Kasina</strong>.
+        If you have questions about this policy, contact us at
+        <a href="mailto:team@twoducksapp.com">team@twoducksapp.com</a>.
       </p>
 
-      <h2>Data retention</h2>
-      <p>
-        We retain information only as long as needed to provide the service and meet legal obligations.
-      </p>
-
-      <h2>Your choices</h2>
+      <h2>2) Information we collect</h2>
+      <p>We collect only what is needed to operate the Service:</p>
       <ul>
-        <li>You can contact us to request access, correction, or deletion where applicable.</li>
-        <li>You can stop using the app at any time.</li>
+        <li><strong>Account information:</strong> When you sign in with Apple, we receive a unique user identifier.
+            Depending on your Apple settings, we may receive your name and email address
+            (or a private relay email).</li>
+        <li><strong>Pairing information:</strong> Anonymous pairing identifiers and relationship status needed
+            to connect you with your partner.</li>
+        <li><strong>App activity:</strong> Signals such as whether a match occurred, timestamps, and basic usage
+            events required for app functionality.</li>
       </ul>
 
-      <h2>Contact</h2>
+      <h2>3) What we do NOT collect</h2>
+      <div class="notice">
+        <p>
+          We do <strong>not</strong> collect or store messages, photos, audio, contacts,
+          location data, health data, or intimate content.
+        </p>
+      </div>
+
+      <h2>4) How we use information</h2>
+      <ul>
+        <li>To operate and improve the Service</li>
+        <li>To enable partner matching and notifications</li>
+        <li>To provide support and respond to inquiries</li>
+        <li>To maintain safety, security, and fraud prevention</li>
+      </ul>
+
+      <h2>5) How information is shared</h2>
       <p>
-        Questions? Email us at
-        <a href="mailto:privacy@twoducksapp.com">privacy@twoducksapp.com</a>.
+        We do not sell your data. Information is shared only:
+      </p>
+      <ul>
+        <li>With your paired partner, strictly as required for the Service</li>
+        <li>With service providers (such as Firebase) that help us operate the app</li>
+        <li>When required by law or to protect users’ safety</li>
+      </ul>
+
+      <h2>6) Data storage and security</h2>
+      <p>
+        We use industry-standard security measures to protect your information.
+        Data is stored using secure cloud infrastructure (including Google Firebase / Firestore),
+        with access controls and encryption in transit.
+      </p>
+
+      <h2>7) Data retention</h2>
+      <p>
+        We retain information only as long as necessary to provide the Service
+        or as required by law. You may request deletion of your account and associated
+        data by contacting us.
+      </p>
+
+      <h2>8) Your choices</h2>
+      <ul>
+        <li>You can control what information you share through Apple’s Sign in settings</li>
+        <li>You may stop using the Service at any time</li>
+        <li>You may request account deletion by contacting us</li>
+      </ul>
+
+      <h2>9) Children’s privacy</h2>
+      <p>
+        Two Ducks is not intended for children under 18.
+        We do not knowingly collect information from children.
+      </p>
+
+      <h2>10) Changes to this policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time.
+        The “Last updated” date reflects the most recent version.
+      </p>
+
+      <h2>11) Contact</h2>
+      <p>
+        Questions about privacy? Email us at
+        <a href="mailto:team@twoducksapp.com">team@twoducksapp.com</a>.
       </p>
     </div>
 
